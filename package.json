@@ -1,0 +1,23 @@
+{
+  "name": "MamaSoko",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "Frontend/customer",
+    "Frontend/admin",
+    "Frontend/delivery",
+    "Backend",
+    "Shared-components"
+  ],
+  "scripts": {
+    "install:all": "npm install",
+    "build:all": "npm run build --workspace Frontend/customer && npm run build --workspace Frontend/admin && npm run build --workspace Frontend/delivery && npm run build --workspace Backend",
+    "start:all": "npm start --workspace Frontend/customer & npm start --workspace Frontend/admin & npm start --workspace Frontend/delivery & npm start --workspace Backend",
+    "lint": "eslint . --ext .js,.vue",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "eslint": "^8.29.0",
+    "jest": "^29.2.0"
+  }
+}
