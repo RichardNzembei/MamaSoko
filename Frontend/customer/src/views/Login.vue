@@ -1,9 +1,8 @@
 <script setup>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import { useTogglePassword } from "@/composables/toggle";
-import { useAuthStore } from "@/stores/authstore";
-const authstore = useAuthStore();
+
+
 const { isPassVisible, togglePassword } = useTogglePassword();
 const router = useRouter();
 const email = ref("");
