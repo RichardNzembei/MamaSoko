@@ -6,10 +6,10 @@ import UserAccount from '../views/UserAccount.vue'
 import Cart from '../components/Cart.vue'
 import Checkout from '../components/Checkout.vue'
 import OrderTracking from '../components/OrderTracking.vue'
-import ProductDetails from '../components/ProductDetails.vue'
-import ProductList from '../components/ProductList.vue'
+import Grocery from '../components/Grocery.vue'
+import Shop from '../components/Shop.vue'
 
-
+import contact from '../components/contact.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -42,13 +42,17 @@ const router = createRouter({
       component: OrderTracking
     },
     {
-      path: '/productdetails',
-      component: ProductDetails
+      path: '/grocery',
+      component:Grocery
     },
     {
-      path: '/productlist',
-      component:ProductList
+      path: '/shop',
+      component:Shop
     },
+    {
+      path: '/contact',
+      component:contact
+    }
   ]
 })
 
