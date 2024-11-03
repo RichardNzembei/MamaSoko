@@ -33,9 +33,12 @@ const closeMenu = (event) => {
             </div>
             <div class="flex items-center space-x-6">
                 <img src="../assets/icons/grocery-cart.png" alt="cart" class="h-5 w-5 md:h-8 md:w-8" />
-                <button
-                    class="text-white bg-black p-2 rounded-3xl w-18 md:w-24 text-sm hover:bg-yellow-100 hover:text-black">Sign
-                    Up</button>
+                <RouterLink to="/register">
+                    <button
+                        class="text-white bg-black p-2 rounded-3xl w-18 md:w-24 text-sm hover:bg-yellow-100 hover:text-black">Sign
+                        Up</button>
+                </RouterLink>
+
             </div>
             <button @click="toggleMenu" class="menu-toggle block md:hidden ml-4">
                 <img src="../assets/icons/menu.png" alt="menu icon" class="h-8 w-8" />

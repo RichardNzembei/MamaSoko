@@ -1,76 +1,32 @@
 <script setup>
-import { ref } from "vue";
-import { useRouter } from "vue-router";
 
-const router = useRouter();
-const { isPassVisible, togglePassword } = useTogglePassword();
-const email = ref("");
-const password = ref("");
-const role = ref("");
-const fName = ref("");
-const lName = ref("");
-const registerUser = () => {
-  authstore.registerUser(
-    email.value,
-    password.value,
-    role.value,
-    fName.value,
-    lName.value
-  );
-  router.push("/");
-};
 </script>
 <template>
-  <div class="container mx-auto p-4">
-    <h4 class="text-2xl font-bold text-center mb-2">User Registration!!</h4>
-    <p class="text-center text-gray-600 mb-8">Fill the form and submit</p>
-    <div class="max-w-lg mx-auto">
-      <div class="bg-white shadow-md rounded-lg p-6">
-        <form @submit.prevent="registerUser">
-          <div class="mb-6">
-            <label for="fName" class="block mt-4 mb-2">First Name</label>
-            <input v-model="fName" type="text" placeholder="Enter your first name" required
-              class="w-full p-2 border rounded-md" />
-            <label for="lName" class="block mt-4 mb-2">Last Name</label>
-            <input v-model="lName" type="text" placeholder="Enter your last name" required
-              class="w-full p-2 border rounded-md" />
-            <label class="block mt-4 mb-2">Role</label>
-            <select v-model="role" required
-              class="w-full p-3 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-              <option disabled value="">Select Role</option>
-              <option value="product engineer">Product Engineer</option>
-              <option value="product manager">Product Manager</option>
-              <option value="CTO">CTO</option>
-              <option value="frontend dev">Frontend Dev</option>
-              <option value="backend dev">Backend Dev</option>
-            </select>
-
-            <label for="email" class="block mt-4 mb-2">Email</label>
-            <input v-model="email" type="email" placeholder="Enter your email" required
-              class="w-full p-2 border rounded-md" />
-
-            <div class="mb-4 relative">
-              <label class="block text-gray-700 font-medium mb-2">Password</label>
-              <input v-model="password" :type="isPassVisible ? 'text' : 'password'" placeholder="*******" required
-                class="w-full p-2 border rounded-md" />
-              <span class="absolute right-3 top-9 cursor-pointer text-gray-500 border-l-4 p-1"
-                @click="togglePassword">{{ isPassVisible ? "🙈" : "👁️" }}</span>
-            </div>
-            <div>
-              <button type="submit"
-                class="bg-blue-300 rounded-lg p-1 w-full text-white hover:bg-slate-200 hover:text-blue-500">
-                Register
-              </button>
-            </div>
-          </div>
-        </form>
-        <div class="mt-4 text-center">
-          <span>Already have an account?</span>
-          <router-link to="/" class="text-blue-500 hover:underline">
-            Sign In
-          </router-link>
-        </div>
-      </div>
+  <div class="min-h-screen bg-gradient-to-r from-white to-red-300 ">
+   <div class="flex p-4 justify-center items-center ">
+<div>
+  <img src="../assets/images/grocery.png" alt="">
+</div>
+<div class="p-2">
+  <h2 class="font-san text-2xl">welcome to <span class="text-red-600 text-3xl">MamaSoko</span> Vendor</h2>
+  <p class="font-mono">Get fresh Groceries<br> from trusted and a servicing source<br> determined to make a healthy society</p>
+</div>
+   </div>
+   <div class="flex flex-col justify-center items-center text-slate-700 text-center ">
+    <h2 class="text-2xl text-green-500 underline mb-4">SIGN UP</h2>
+    <div class="mb-4">
+      <label for="username" class="block">Username</label>
+    <input type="text" placeholder="enter a username" class="text-center  p-1 rounded-3xl focus:outline-none focus:ring-2 focus:ring-green-300 hover:bg-slate-100">
     </div>
+    <div class="mb-4">
+      <label for="email" class="block">Email</label>
+    <input type="text" placeholder="example@gmail.com" class="text-center p-1 rounded-3xl focus:outline-none focus:ring-2 focus:ring-green-300 hover:bg-slate-100">
+    </div>
+    <div class="mb-4">
+      <label for="password" class="block">Password</label>
+    <input type="text" placeholder="*******" class="text-center  p-1 rounded-3xl focus:outline-none focus:ring-2 focus:ring-green-300 hover:bg-slate-100">
+    </div>
+    <button class="bg-red-400 rounded-2xl p-1 w-40 text-white hover:bg-white hover:text-red-400">Register</button>
+   </div>
   </div>
 </template>
